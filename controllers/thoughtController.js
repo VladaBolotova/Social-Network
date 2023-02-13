@@ -1,7 +1,7 @@
 const { Thought, User } = require('../models');
 
 module.exports = {
-  getThought(req, res) {
+  getThoughts(req, res) {
     Thought.find()
       .then((thoughts) => res.json(thoughts))
       .catch((err) => res.status(500).json(err));
@@ -89,8 +89,8 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  // TODO: Add comments to the functionality of the addTag method
-  removeTag(req, res) {
+
+  removeReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
       { $pull: { reactions: { reactionId: req.params.reactionId } } },
