@@ -22,5 +22,5 @@ https://drive.google.com/file/d/1nUt6w4znlCI89eVZW8FyVczCnF8lMP52/view
 
 ## Screenshots
 
-![img](./Assets/Screen%20Shot%202023-02-13%20at%2011.04.49%20PM.pngAssets/)
+![img](./Assets/Screen%20Shot%202023-02-13%20at%2011.04.49%20PM.png)
 ![img](./Assets/Screen%20Shot%202023-02-13%20at%2011.04.56%20PM.png/)
