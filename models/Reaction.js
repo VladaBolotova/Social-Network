@@ -1,10 +1,11 @@
-const { Schema, model } = require('mongoose');
+const { Schema, Types } = require('mongoose');
 
 const reactionSchema = new Schema (
     {
         reactionId: {
-
-        },
+            type: Schema.Types.ObjectId,
+            default: () => new Types.ObjectId(),
+          },
         reactionBody: {
             type: String,
             required: true,
@@ -16,20 +17,18 @@ const reactionSchema = new Schema (
 
         },
         createdAt: {
-            type: DataView,
+            type: Date,
             default: Date.now,
-            dob: {
-                type: Date,
-                get: (date) => {
-                    if (date) return date.toISOString().split("T") [0];
-                }
-            },
-            timestamp: true,
         }
 
     }
 );
 
-const Reaction = model('reaction', reactionSchema);
+reactionSchema.set('toJSON', { getters: true });
 
-module.exports = Reaction;
+reactionSchema.virtual('formattedCreatedAt').get(function() {
+  return this.createdAt.toLocaleString();
+});
+
+
+module.exports = reactionSchema;

@@ -53,7 +53,7 @@ const names = [
         published: Math.random() < 0.5,
         description: getRandomArrItem(thoughtDescription),
         buildSuccess: Math.random() < 0.5,
-        tags: [...getThoughtReactions(3)],
+        reactions: [...getThoughtReactions(3)],
       });
     }
     return results;
@@ -67,7 +67,7 @@ const names = [
     const results = [];
     for (let i = 0; i < int; i++) {
       results.push({
-        tagBody: getRandomArrItem(possibleReactions),
+        reactionBody: getRandomArrItem(possibleReactions),
         username: getRandomName(),
       });
     }
